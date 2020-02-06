@@ -11,11 +11,11 @@ module.exports = function (req, res, next) {
             let token = jwt.sign({ data: USERNAME, expiresIn: "1h" }, APP_SECRET);
             res.json({ success: true, token: token });
         } else {
-            res.json({ success: false });
+            res.json({ success: false });15240487@itleon.edu.mx
         }
         res.end();
         return;
-    } else if ((((req.url.startsWith("/api/products") || req.url.startsWith("/products")) 
+    } else if ((((req.url.startsWith("/api/products") || req.url.startsWith("/products"))
         || (req.url.startsWith("/api/categories") || req.url.startsWith("/categories"))) && req.method != "GET")
         || ((req.url.startsWith("/api/orders") || req.url.startsWith("/orders")) && req.method != "POST")) {
             let token = req.headers["authorization"];

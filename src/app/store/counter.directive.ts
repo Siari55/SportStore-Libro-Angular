@@ -2,16 +2,16 @@
 
 import {
     Directive, ViewContainerRef, TemplateRef, Input, Attribute, SimpleChanges
-} from "@angular/core";
+} from '@angular/core';
 
 @Directive({
-    selector: "[counterOf]"
+    selector: '[counterOf]'
 })
 
 export class CounterDirective {
     constructor(private container: ViewContainerRef, private template: TemplateRef<Object>) { }
-    
-    @Input("counterOf")
+
+    @Input('counterOf')
     counter: number;
 
     ngOnChanges(changes: SimpleChanges) {
