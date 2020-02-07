@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
             let token = jwt.sign({ data: USERNAME, expiresIn: "1h" }, APP_SECRET);
             res.json({ success: true, token: token });
         } else {
-            res.json({ success: false });15240487@itleon.edu.mx
+            res.json({ success: false });
         }
         res.end();
         return;
