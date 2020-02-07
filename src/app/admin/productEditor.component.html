@@ -1,4 +1,4 @@
-<div class="btn-primary p-2 text-white" [class.bg-warning]="editing", [class.text-dark]="editing">
+<div class="btn-primary p-2 text-white" [class.bg-warning]="editing" [class.text-dark]="editing">
   <h5>{{editing ? "Edit": "Create"}} Product</h5>
 </div>
 <form novalidate #form="ngForm" (ngSubmit)="save(form)">
@@ -18,5 +18,6 @@
     <label>Price</label>
     <input class="form-control" name="price" [(ngModel)]="product.price" >
   </div>
+  <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">{{editing ? "Save" : "Create"}}</button>
   <button type="reset" class="btn btn-secondary" routerLink="/admin/main/products">Cancel</button>
 </form>
